@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LG 11.3: 1st Graded Exercise - Processing Online Forms</title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="index css.css">
+    </head>
+    <body>
+        <h2>Sign-Up Sheet</h2>
+        <form id="myForm" onsubmit="return outputFunction(); onreset=refreshPage()">
+            <fieldset form="myForm">
+                <legend>Log-In Sheet</legend><br/>
+            <label for="Name">Name:</label>
+            <input onfocus="changeColor(this)" onblur="changeColorBack(this)" 
+            type="text" id="Name" name="Name" ><br/><br/>
+
+            <label for="gen">Gender: </label>
+            <select onfocus="changeColor(this)" onblur="changeColorBack(this)" 
+            name="gender" id="gen" >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to mention">Prefer not to mention</option>
+            </select><br/><br/>
+
+            <label for="userName">Username:</label>
+            <input onfocus="changeColor(this)" onblur="changeColorBack(this)" 
+            type="text" id="userName" name="userName" ><br/><br/>
+
+            <label for="password">Password:</label>
+            <input onfocus="changeColor(this)" onblur="changeColorBack(this)"
+             type = "password" id="pWord" name="password"><br/><br/>
+
+            <label for="Email">Email:</label>
+            <input onfocus="changeColor(this)" onblur="changeColorBack(this)"
+            type = "email" id="Email" name="Email"><br/><br/>
+
+            <label for="userInterests">Interests</label></br>
+            <textarea id="textArea" name="userInterests" onfocus="changeColor(this)" onblur="changeColorBack(this)" rows="4" cols="50"></textarea> <br/>
+
+            
+            </fieldset><br/>
+
+            <fieldset form="myForm">
+                <legend>Your Information</legend>
+
+                <div id="divname"></div>
+                <div id="divgen"></div>
+                <div id="divusername"></div>
+                <div id="divemail"></div>
+                <div id="divpassword"></div>
+                <div id="divinterest"></div>
+            </fieldset><br/>
+
+            
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset" onclick="refreshPage();">
+
+            
+        </form>
+
+        <script>
+            function changeColor(formElement) {
+                var a = document.getElementById("Name");
+                var b = document.getElementById("gen");
+                var c = document.getElementById("userName");
+                var d = document.getElementById("pWord");
+                var e = document.getElementById("Email");
+                var f = document.getElementById("textArea");
+                
+                if (a.value == "") {
+                    document.getElementById("Name").style.border = "2px solid red";
+                }
+
+                if (b.value == "") {
+                    document.getElementById("gen").style.border = "2px solid red";
+                }
+
+                if (c.value == "") {
+                    document.getElementById("userName").style.border = "2px solid red";
+                }
+
+                if (d.value == "") {
+                    document.getElementById("pWord").style.border = "2px solid red";
+                }
+
+                if (e.value == "") {
+                    document.getElementById("Email").style.border = "2px solid red";
+                }
+
+                if (f.value == "") {
+                    document.getElementById("textArea").style.border = "2px solid red";
+                }
+            }
+               
+            function changeColorBack(formElement) {
+                var a = document.getElementById("Name");
+                var b = document.getElementById("gen");
+                var c = document.getElementById("userName");
+                var d = document.getElementById("pWord");
+                var e = document.getElementById("Email");
+                var f = document.getElementById("textArea");
+                
+                if (a.value !== "") {
+                    document.getElementById("Name").style.border = "2px solid green";
+                }
+
+                if (b.value !== "") {
+                    document.getElementById("gen").style.border = "2px solid green";
+                }
+
+                if (c.value !== "") {
+                    document.getElementById("userName").style.border = "2px solid green";
+                }
+
+                if (d.value !== "") {
+                    document.getElementById("pWord").style.border = "2px solid green";
+                }
+
+                if (e.value !== "") {
+                    document.getElementById("Email").style.border = "2px solid green";
+                }
+
+                if (f.value !== "") {
+                    document.getElementById("textArea").style.border = "2px solid green";
+                }
+            }
+
+            function outputFunction(){
+                var a = document.getElementById("Name").value;
+                document.getElementById("divname").innerHTML = "Name: " + a;  
+                   
+                
+                var b = document.getElementById("gen").value;
+                document.getElementById("divgen").innerHTML = "Gender: " + b;  
+                
+
+                var c = document.getElementById("userName").value;
+                document.getElementById("divusername").innerHTML = "Username: " + c;  
+                
+
+                var d = document.getElementById("pWord").value;
+                document.getElementById("divpassword").innerHTML = "Password: " + d;  
+               
+
+                var e = document.getElementById("Email").value;
+                document.getElementById("divemail").innerHTML = "Email: " + e;  
+                
+
+                var f = document.getElementById("textArea").value;
+                document.getElementById("divinterest").innerHTML = "Interest: " + f;  
+
+                return false;
+            }
+
+            function refreshPage() {
+                window.location.reload();
+            }
+            
+        </script>
+    </body>
+</html>

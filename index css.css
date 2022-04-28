@@ -1,0 +1,13 @@
+body {
+    background-color: yellow;
+}
+
+legend {
+    font-size: large;
+}
+
+h2 {
+    font-size: x-large;
+    text-align: center;
+    color: blue;
+}
